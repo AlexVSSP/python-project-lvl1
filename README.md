@@ -9,3 +9,6 @@
 
 ### make-calc game example:
 [![asciicast](https://asciinema.org/a/502524.svg)](https://asciinema.org/a/502524)
+
+### make-gcd game example:
+[![asciicast](https://asciinema.org/a/502641.svg)](https://asciinema.org/a/502641)
