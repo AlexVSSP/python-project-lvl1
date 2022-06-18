@@ -6,3 +6,6 @@
 
 ### make-even game example:
 [![asciicast](https://asciinema.org/a/501095.svg)](https://asciinema.org/a/501095)
+
+### make-calc game example:
+[![asciicast](https://asciinema.org/a/502524.svg)](https://asciinema.org/a/502524)
