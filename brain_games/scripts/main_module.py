@@ -22,6 +22,13 @@ def question_calc(text, value):
     print(f'Question: {text}')
 
 
+def question_gcd(number1, number2):
+    global num1, num2
+    num1 = number1
+    num2 = number2
+    print(f'Question: {number1} {number2}')
+
+
 def print_answer():
     global answer
     answer = prompt.string('Your answer: ')
@@ -52,6 +59,24 @@ def comparison_calc():
         return 1
     else:
         print(f"""'{answer}' is wrong answer ;(. Correct answer was '{number_calc}'.
+Let's try again, {name}!""")
+        return 0
+
+
+def comparison_gcd():
+    gcd = 1
+    i = 1
+    while i <= min(num1, num2):
+        if (num1 % i == 0) and (num2 % i == 0):
+            gcd = i
+            i += 1
+        else:
+            i += 1
+    if answer == str(gcd):
+        print('Correct!')
+        return 1
+    else:
+        print(f"""'{answer}' is wrong answer ;(. Correct answer was '{gcd}'.
 Let's try again, {name}!""")
         return 0
 
