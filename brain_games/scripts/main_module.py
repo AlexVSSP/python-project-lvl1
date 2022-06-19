@@ -140,5 +140,5 @@ def congratulation():
     print(f'Congratulations, {name}!')
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#    main()
