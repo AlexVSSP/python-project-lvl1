@@ -45,6 +45,13 @@ def question_progression(in_first_num, in_step):
     in_line = " ".join(list)
     print('Question:', in_line)
 
+
+def question_prime(in_number):
+    global number_prime
+    number_prime = in_number
+    print(f'Question: {in_number}')
+
+
 def print_answer():
     global answer
     answer = prompt.string('Your answer: ')
@@ -103,6 +110,29 @@ def comparison_progression():
         return 1
     else:
         print(f"""'{answer}' is wrong answer ;(. Correct answer was '{target_value}'.
+Let's try again, {name}!""")
+
+
+def comparison_prime():
+    i = 0
+    current_number = 1
+    while current_number <= number_prime:
+        if (number_prime % current_number == 0):
+            i += 1
+        current_number += 1
+    if i == 2:
+        if answer == 'yes':
+            print('Correct!')
+            return 1
+        else:
+            print(f"""'{answer}' is wrong answer ;(. Correct answer was 'yes'.
+Let's try again, {name}!""")
+    else:
+        if answer == 'no':
+            print('Correct!')
+            return 1
+        else:
+            print(f"""'{answer}' is wrong answer ;(. Correct answer was 'no'.
 Let's try again, {name}!""")
 
 
