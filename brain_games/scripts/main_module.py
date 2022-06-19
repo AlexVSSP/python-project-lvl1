@@ -138,7 +138,3 @@ Let's try again, {name}!""")
 
 def congratulation():
     print(f'Congratulations, {name}!')
-
-
-# if __name__ == '__main__':
-#    main()
