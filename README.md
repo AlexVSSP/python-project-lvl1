@@ -12,3 +12,6 @@
 
 ### make-gcd game example:
 [![asciicast](https://asciinema.org/a/502641.svg)](https://asciinema.org/a/502641)
+
+### make-progression game example:
+[![asciicast](https://asciinema.org/a/502704.svg)](https://asciinema.org/a/502704)
