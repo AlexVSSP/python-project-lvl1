@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "The Mind Games project includes 5 games that test the user's mathematical knowledge"
 authors = ["Aleksey Seleznev <ferfa2@rambler.ru>"]
 packages = [
   { include = "brain_games" },
