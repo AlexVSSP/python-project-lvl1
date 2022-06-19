@@ -15,3 +15,6 @@
 
 ### make-progression game example:
 [![asciicast](https://asciinema.org/a/502704.svg)](https://asciinema.org/a/502704)
+
+### make-prime game example:
+[![asciicast](https://asciinema.org/a/502715.svg)](https://asciinema.org/a/502715)
