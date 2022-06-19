@@ -29,6 +29,22 @@ def question_gcd(number1, number2):
     print(f'Question: {number1} {number2}')
 
 
+def question_progression(in_first_num, in_step):
+    global target_value
+    i = 0
+    list = []
+    target_value = 0
+    target_index = 0
+    while i < 10:
+        list.append(str(in_first_num))
+        in_first_num += in_step
+        i += 1
+    target_index = random.randint(0, 9)
+    target_value = list[target_index]
+    list[target_index] = '..'
+    in_line = " ".join(list)
+    print('Question:', in_line)
+
 def print_answer():
     global answer
     answer = prompt.string('Your answer: ')
@@ -79,6 +95,15 @@ def comparison_gcd():
         print(f"""'{answer}' is wrong answer ;(. Correct answer was '{gcd}'.
 Let's try again, {name}!""")
         return 0
+
+
+def comparison_progression():
+    if answer == str(target_value):
+        print('Correct!')
+        return 1
+    else:
+        print(f"""'{answer}' is wrong answer ;(. Correct answer was '{target_value}'.
+Let's try again, {name}!""")
 
 
 def congratulation():
