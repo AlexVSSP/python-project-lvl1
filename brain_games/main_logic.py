@@ -33,7 +33,7 @@ def check_answer(question_value, correct_answer):
         print('Correct!')
         correct_answers += 1
         if correct_answers == 3:
-            print(f'Congratulation, {name}!')
+            print(f'Congratulations, {name}!')
         return 1
     else:
         print(f"""'{response}' is wrong answer ;(. Correct answer was '{correct_answer}'.
