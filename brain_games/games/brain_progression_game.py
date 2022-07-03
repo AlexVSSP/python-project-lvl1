@@ -1,26 +1,38 @@
-#!/usr/bin/env python3
 import random
-from brain_games.main_logic import welcome_game
-from brain_games.main_logic import check_answer
+from brain_games.main_logic import game
 
 
 def welcome_game_progression():
-    welcome_game('What number is missing in the progression?')
+    return 'What number is missing in the progression?'
 
 
-def checking_data():
-    for i in range(3):
-        first_num = random.randint(1, 20)
-        step = random.randint(2, 9)
-        i = 0
-        list = []
-        while i < 10:
-            list.append(str(first_num))
-            first_num += step
-            i += 1
-        target_index = random.randint(0, 9)
-        target_value = list[target_index]
-        list[target_index] = '..'
-        input_line = " ".join(list)
-        if check_answer(input_line, str(target_value)) == 0:
-            break
+def game_rules():
+    begin_range_first_num = 1
+    end_range_first_num = 20
+    begin_range_step = 2
+    end_range_step = 9
+    first_num = random.randint(begin_range_first_num, end_range_first_num)
+    step = random.randint(begin_range_step, end_range_step)
+    i = 0
+    list = []
+    total_numbers = 10
+    while i < total_numbers:
+        list.append(str(first_num))
+        first_num += step
+        i += 1
+    begin_range_targ_ind = 0
+    end_range_targ_ind = 9
+    target_index = random.randint(begin_range_targ_ind, end_range_targ_ind)
+    target_value = list[target_index]
+    list[target_index] = '..'
+    input_line = " ".join(list)
+    return [input_line, str(target_value)]
+
+
+def main_game():
+    game(welcome_game_progression(), repeat_game_rules)
+
+
+def repeat_game_rules():
+    in_line, target_val = game_rules()
+    return [in_line, target_val]

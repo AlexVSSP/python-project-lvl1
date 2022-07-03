@@ -1,31 +1,40 @@
-#!/usr/bin/env python3
 import random
-from brain_games.main_logic import welcome_game
-from brain_games.main_logic import check_answer
+from brain_games.main_logic import game
 
 
 def welcome_game_prime():
-    welcome_game(
-        'Answer "yes" if given number is prime, '
-        'otherwise answer "no".')
+    return ("Answer 'yes' if given number is prime, "
+            "otherwise answer 'no'.")
 
 
 def is_prime(check_number):
-    i = 0
+    number_of_divisors = 0
     current_number = 1
     while current_number <= check_number:
         if check_number % current_number == 0:
-            i += 1
+            number_of_divisors += 1
         current_number += 1
-    if i == 2:
-        return 'yes'
+    if number_of_divisors == 2:
+        return True
     else:
-        return 'no'
+        return False
 
 
-def checking_data():
-    for i in range(3):
-        number = random.randint(2, 113)
-        right_answer = is_prime(number)
-        if check_answer(number, right_answer) == 0:
-            break
+def game_rules(checking_func):
+    begin_range = 2
+    end_range = 113
+    number = random.randint(begin_range, end_range)
+    if checking_func(number) is True:
+        right_answer = 'yes'
+    else:
+        right_answer = 'no'
+    return [number, right_answer]
+
+
+def main_game():
+    game(welcome_game_prime(), repeat_game_rules)
+
+
+def repeat_game_rules():
+    numb, answ = game_rules(is_prime)
+    return [numb, answ]

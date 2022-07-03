@@ -1,23 +1,33 @@
-#!/usr/bin/env python3
 import random
-from brain_games.main_logic import welcome_game
-from brain_games.main_logic import check_answer
+from brain_games.main_logic import game
 
 
 def welcome_game_even():
-    welcome_game('Answer "yes" if the number is even, otherwise answer "no".')
+    return 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def is_even(check_number):
     if check_number % 2 == 0:
-        return 'yes'
+        return True
     else:
-        return 'no'
+        return False
 
 
-def checking_data():
-    for i in range(3):
-        number = random.randint(1, 100)
-        right_answer = is_even(number)
-        if check_answer(number, right_answer) == 0:
-            break
+def game_rules(checking_func):
+    begin_range = 1
+    end_range = 100
+    number = random.randint(begin_range, end_range)
+    if checking_func(number) is True:
+        right_answer = 'yes'
+    else:
+        right_answer = 'no'
+    return [number, right_answer]
+
+
+def main_game():
+    game(welcome_game_even(), repeat_game_rules)
+
+
+def repeat_game_rules():
+    numb, answ = game_rules(is_even)
+    return [numb, answ]
