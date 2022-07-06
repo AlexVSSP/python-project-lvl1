@@ -1,17 +1,18 @@
 import random
-from brain_games.main_logic import game
+from brain_games.engine import game
 
 
-def welcome_game_gcd():
-    return 'Find the greatest common divisor of given numbers.'
+WELCOME_GAME_GCD = 'Find the greatest common divisor of given numbers.'
+BEGIN_RANGE = 1
+END_RANGE = 100
 
 
 def game_rules():
     list = []
-    begin_range = 1
-    end_range = 100
-    first_num = random.randint(begin_range, end_range)
-    second_num = random.randint(begin_range, end_range)
+#    begin_range = 1
+#    end_range = 100
+    first_num = random.randint(BEGIN_RANGE, END_RANGE)
+    second_num = random.randint(BEGIN_RANGE, END_RANGE)
     list.append(str(first_num))
     list.append(str(second_num))
     input_line = " ".join(list)
@@ -27,9 +28,4 @@ def game_rules():
 
 
 def main_game():
-    game(welcome_game_gcd(), repeat_game_rules)
-
-
-def repeat_game_rules():
-    in_line, gcd = game_rules()
-    return [in_line, gcd]
+    game(WELCOME_GAME_GCD, game_rules)

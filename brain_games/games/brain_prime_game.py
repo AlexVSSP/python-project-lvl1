@@ -1,10 +1,11 @@
 import random
-from brain_games.main_logic import game
+from brain_games.engine import game
 
 
-def welcome_game_prime():
-    return ("Answer 'yes' if given number is prime, "
-            "otherwise answer 'no'.")
+WELCOME_GAME_PRIME = ("Answer 'yes' if given number is prime, "
+                      "otherwise answer 'no'.")
+BEGIN_RANGE = 2
+END_RANGE = 113
 
 
 def is_prime(check_number):
@@ -20,11 +21,9 @@ def is_prime(check_number):
         return False
 
 
-def game_rules(checking_func):
-    begin_range = 2
-    end_range = 113
-    number = random.randint(begin_range, end_range)
-    if checking_func(number) is True:
+def game_rules():
+    number = random.randint(BEGIN_RANGE, END_RANGE)
+    if is_prime(number) is True:
         right_answer = 'yes'
     else:
         right_answer = 'no'
@@ -32,9 +31,4 @@ def game_rules(checking_func):
 
 
 def main_game():
-    game(welcome_game_prime(), repeat_game_rules)
-
-
-def repeat_game_rules():
-    numb, answ = game_rules(is_prime)
-    return [numb, answ]
+    game(WELCOME_GAME_PRIME, game_rules)

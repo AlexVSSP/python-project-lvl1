@@ -1,10 +1,10 @@
 import random
-from brain_games.main_logic import game
+from brain_games.engine import game
 
 
-def welcome_game_even():
-    return 'Answer "yes" if the number is even, otherwise answer "no".'
-
+WELCOME_GAME_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".'
+BEGIN_RANGE = 1
+END_RANGE = 100
 
 def is_even(check_number):
     if check_number % 2 == 0:
@@ -13,11 +13,9 @@ def is_even(check_number):
         return False
 
 
-def game_rules(checking_func):
-    begin_range = 1
-    end_range = 100
-    number = random.randint(begin_range, end_range)
-    if checking_func(number) is True:
+def game_rules():
+    number = random.randint(BEGIN_RANGE, END_RANGE)
+    if is_even(number) is True:
         right_answer = 'yes'
     else:
         right_answer = 'no'
@@ -25,9 +23,4 @@ def game_rules(checking_func):
 
 
 def main_game():
-    game(welcome_game_even(), repeat_game_rules)
-
-
-def repeat_game_rules():
-    numb, answ = game_rules(is_even)
-    return [numb, answ]
+    game(WELCOME_GAME_EVEN, game_rules)

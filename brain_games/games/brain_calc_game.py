@@ -1,17 +1,16 @@
 import random
-from brain_games.main_logic import game
+from brain_games.engine import game
 
 
-def welcome_game_calc():
-    return 'What is the result of the expression?'
+WELCOME_GAME_CALC = 'What is the result of the expression?'
+BEGIN_RANGE = 1
+END_RANGE_FIRST_NUM = 50
+END_RANGE_SECOND_NUM = 20
 
 
 def game_rules():
-    begin_range = 1
-    end_range_first_num = 50
-    end_range_second_num = 20
-    first_num = random.randint(begin_range, end_range_first_num)
-    second_num = random.randint(begin_range, end_range_second_num)
+    first_num = random.randint(BEGIN_RANGE, END_RANGE_FIRST_NUM)
+    second_num = random.randint(BEGIN_RANGE, END_RANGE_SECOND_NUM)
     operation = random.choice(['+', '-', '*'])
     expression = f'{str(first_num)} {operation} {str(second_num)}'
     if operation == '+':
@@ -24,9 +23,4 @@ def game_rules():
 
 
 def main_game():
-    game(welcome_game_calc(), repeat_game_rules)
-
-
-def repeat_game_rules():
-    expr, res = game_rules()
-    return [expr, res]
+    game(WELCOME_GAME_CALC, game_rules)
