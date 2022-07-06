@@ -6,6 +6,7 @@ WELCOME_GAME_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".'
 BEGIN_RANGE = 1
 END_RANGE = 100
 
+
 def is_even(check_number):
     if check_number % 2 == 0:
         return True
