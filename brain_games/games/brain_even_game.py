@@ -1,5 +1,5 @@
 import random
-from brain_games.engine import game
+from brain_games.engine import play_game
 
 
 WELCOME_GAME_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -14,14 +14,14 @@ def is_even(check_number):
         return False
 
 
-def game_rules():
+def generate_round_parametres():
     number = random.randint(BEGIN_RANGE, END_RANGE)
-    if is_even(number) is True:
+    if is_even(number):
         right_answer = 'yes'
     else:
         right_answer = 'no'
     return [number, right_answer]
 
 
-def main_game():
-    game(WELCOME_GAME_EVEN, game_rules)
+def start_game():
+    play_game(WELCOME_GAME_EVEN, generate_round_parametres)

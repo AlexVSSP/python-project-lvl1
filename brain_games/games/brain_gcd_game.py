@@ -1,5 +1,5 @@
 import random
-from brain_games.engine import game
+from brain_games.engine import play_game
 
 
 WELCOME_GAME_GCD = 'Find the greatest common divisor of given numbers.'
@@ -7,10 +7,8 @@ BEGIN_RANGE = 1
 END_RANGE = 100
 
 
-def game_rules():
+def generate_round_parametres():
     list = []
-#    begin_range = 1
-#    end_range = 100
     first_num = random.randint(BEGIN_RANGE, END_RANGE)
     second_num = random.randint(BEGIN_RANGE, END_RANGE)
     list.append(str(first_num))
@@ -27,5 +25,5 @@ def game_rules():
     return [input_line, str(greatest_common_divisor)]
 
 
-def main_game():
-    game(WELCOME_GAME_GCD, game_rules)
+def start_game():
+    play_game(WELCOME_GAME_GCD, generate_round_parametres)

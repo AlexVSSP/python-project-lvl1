@@ -4,7 +4,7 @@ import prompt
 REQ_NUMBER_CORRECT_ANSWERS = 3
 
 
-def game(game_rule, game):
+def play_game(game_rule, game):
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')

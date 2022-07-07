@@ -1,5 +1,5 @@
 import random
-from brain_games.engine import game
+from brain_games.engine import play_game
 
 
 WELCOME_GAME_PROGRESSION = 'What number is missing in the progression?'
@@ -12,7 +12,7 @@ BEGIN_RANGE_TARG_IND = 0
 END_RANGE_TARG_IND = 9
 
 
-def game_rules():
+def generate_round_parametres():
     first_num = random.randint(BEGIN_RANGE_FIRST_NUM, END_RANGE_FIRST_NUM)
     step = random.randint(BEGIN_RANGE_STEP, END_RANGE_STEP)
     i = 0
@@ -28,5 +28,5 @@ def game_rules():
     return [input_line, str(target_value)]
 
 
-def main_game():
-    game(WELCOME_GAME_PROGRESSION, game_rules)
+def start_game():
+    play_game(WELCOME_GAME_PROGRESSION, generate_round_parametres)

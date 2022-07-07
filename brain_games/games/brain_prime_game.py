@@ -1,5 +1,6 @@
 import random
-from brain_games.engine import game
+from brain_games.engine import play_game
+from math import sqrt
 
 
 WELCOME_GAME_PRIME = ("Answer 'yes' if given number is prime, "
@@ -9,26 +10,23 @@ END_RANGE = 113
 
 
 def is_prime(check_number):
-    number_of_divisors = 0
-    current_number = 1
-    while current_number <= check_number:
+    current_number = 2
+    while current_number <= int(sqrt(check_number)) + 1:
         if check_number % current_number == 0:
-            number_of_divisors += 1
-        current_number += 1
-    if number_of_divisors == 2:
-        return True
-    else:
-        return False
+            return False
+        else:
+            current_number += 1
+    return True
 
 
-def game_rules():
+def generate_round_parametres():
     number = random.randint(BEGIN_RANGE, END_RANGE)
-    if is_prime(number) is True:
+    if is_prime(number):
         right_answer = 'yes'
     else:
         right_answer = 'no'
     return [number, right_answer]
 
 
-def main_game():
-    game(WELCOME_GAME_PRIME, game_rules)
+def start_game():
+    play_game(WELCOME_GAME_PRIME, generate_round_parametres)

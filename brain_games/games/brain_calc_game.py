@@ -1,5 +1,5 @@
 import random
-from brain_games.engine import game
+from brain_games.engine import play_game
 
 
 WELCOME_GAME_CALC = 'What is the result of the expression?'
@@ -8,7 +8,7 @@ END_RANGE_FIRST_NUM = 50
 END_RANGE_SECOND_NUM = 20
 
 
-def game_rules():
+def generate_round_parametres():
     first_num = random.randint(BEGIN_RANGE, END_RANGE_FIRST_NUM)
     second_num = random.randint(BEGIN_RANGE, END_RANGE_SECOND_NUM)
     operation = random.choice(['+', '-', '*'])
@@ -22,5 +22,5 @@ def game_rules():
     return [expression, str(result)]
 
 
-def main_game():
-    game(WELCOME_GAME_CALC, game_rules)
+def start_game():
+    play_game(WELCOME_GAME_CALC, generate_round_parametres)
