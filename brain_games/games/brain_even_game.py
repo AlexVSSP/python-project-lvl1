@@ -20,7 +20,7 @@ def generate_round_parametres():
         right_answer = 'yes'
     else:
         right_answer = 'no'
-    return [number, right_answer]
+    return number, right_answer
 
 
 def start_game():

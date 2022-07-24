@@ -14,15 +14,20 @@ def generate_round_parametres():
     list.append(str(first_num))
     list.append(str(second_num))
     input_line = " ".join(list)
-    greatest_common_divisor = 1
+    greatest_common_divisor = find_gcd(first_num, second_num)
+    return input_line, str(greatest_common_divisor)
+
+
+def find_gcd(first_n, second_n):
+    gcd = 1
     curr_divisor = 1
-    while curr_divisor <= min(first_num, second_num):
-        if (first_num % curr_divisor == 0) and (second_num % curr_divisor == 0):
-            greatest_common_divisor = curr_divisor
+    while curr_divisor <= min(first_n, second_n):
+        if (first_n % curr_divisor == 0) and (second_n % curr_divisor == 0):
+            gcd = curr_divisor
             curr_divisor += 1
         else:
             curr_divisor += 1
-    return [input_line, str(greatest_common_divisor)]
+    return gcd
 
 
 def start_game():

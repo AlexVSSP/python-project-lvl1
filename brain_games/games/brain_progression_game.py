@@ -25,7 +25,7 @@ def generate_round_parametres():
     target_value = list[target_index]
     list[target_index] = '..'
     input_line = " ".join(list)
-    return [input_line, str(target_value)]
+    return input_line, str(target_value)
 
 
 def start_game():

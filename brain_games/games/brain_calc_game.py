@@ -19,7 +19,7 @@ def generate_round_parametres():
         result = first_num - second_num
     elif operation == '*':
         result = first_num * second_num
-    return [expression, str(result)]
+    return expression, str(result)
 
 
 def start_game():
